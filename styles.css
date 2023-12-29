@@ -1,0 +1,138 @@
+/* Basic Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f0e6;
+    color: #3a3a3a;
+    text-align: center;
+}
+
+.header, .footer {
+    background-color: #003366;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+.gallery {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-heading {
+    text-align: center;
+    margin: 20px 0;
+    color: #003366; /* You can change the color to match your theme */
+    font-size: 1.5em; /* Adjust the font size as needed */
+}
+
+.game-heading {
+    text-align: center;
+    margin: 20px 0;
+    color: #003366; /* Adjust color as needed */
+    font-size: 1.5em; /* Adjust font size as needed */
+}
+
+/* Continue with existing styles... */
+
+
+.gallery img {
+    width: calc(33% - 20px); /* Adjust the width as needed */
+    margin: 10px;
+    border: 4px solid #6699cc;
+    box-shadow: 2px 2px 5px #aaa;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the area without stretching */
+}
+
+.more-images-coming {
+    width: calc(33% - 20px); /* Same width as images */
+    margin: 10px;
+    border: 4px dashed #6699cc; /* Dashed border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px; /* Adjust height as needed */
+    box-shadow: 2px 2px 5px #aaa;
+    color: #6699cc;
+    font-style: italic;
+}
+
+
+/* Memory Game Styles */
+/* ... Other styles ... */
+
+.memory-game {
+    max-width: 640px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards in a row */
+    grid-gap: 10px;
+    perspective: 1000px; /* Added for 3D effect */
+    justify-content: center; /* Center the grid horizontally */
+}
+
+.memory-card {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin: 10px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face, .back-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.back-face {
+    transform: rotateY(0deg);
+}
+
+/* ... Media Queries ... */
+
+/* Fixing Footer Position */
+.footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .gallery img {
+        width: calc(50% - 20px);
+    }
+    .memory-game {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery img {
+        width: calc(100% - 20px);
+    }
+    .memory-game {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
